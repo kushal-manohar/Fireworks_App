@@ -19,7 +19,9 @@
         "monochromeImage": "./assets/android-icon-monochrome.png"
       },
       "permissions": [
-        "CAMERA"
+        "CAMERA",
+        "android.permission.CAMERA",
+        "android.permission.RECORD_AUDIO"
       ],
       "predictiveBackGestureEnabled": false
     },
@@ -36,6 +38,11 @@
           "cameraPermission": "Allow Fireworks POS to access camera for scanning barcodes."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "90ab80f5-5099-47f6-b786-2ae7cab8345e"
+      }
+    }
   }
 }
