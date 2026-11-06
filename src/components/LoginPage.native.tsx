@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   ScrollView,
+  Image,
 } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { UserSession, ThemeMode } from '../types';
@@ -63,7 +64,11 @@ export const LoginPageNative: React.FC<LoginPageProps> = ({
       <View style={styles.topHeader}>
         <View style={styles.brandRow}>
           <View style={styles.logoBadge}>
-            <Text style={styles.logoIcon}>⚡</Text>
+            <Image
+              source={require('../../assets/fireworks-icon.png')}
+              style={styles.brandLogoImg}
+              resizeMode="contain"
+            />
           </View>
           <View>
             <Text style={[styles.storeTitle, isDark ? styles.textWhite : styles.textDark]}>
@@ -217,9 +222,17 @@ const styles = StyleSheet.create({
     width: 38,
     height: 38,
     borderRadius: 10,
-    backgroundColor: '#4f46e5',
+    backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  brandLogoImg: {
+    width: 36,
+    height: 36,
+    borderRadius: 9,
   },
   logoIcon: {
     fontSize: 18,

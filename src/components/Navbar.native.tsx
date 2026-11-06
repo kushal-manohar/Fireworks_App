@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, Image } from 'react-native';
 import { Role, ThemeMode, UserSession } from '../types';
 
 interface NavbarProps {
@@ -34,7 +34,11 @@ export const NavbarNative: React.FC<NavbarProps> = ({
       <View style={styles.topRow}>
         <View style={styles.brandBox}>
           <View style={styles.logoBadge}>
-            <Text style={styles.logoText}>⚡</Text>
+            <Image
+              source={require('../../assets/fireworks-icon.png')}
+              style={styles.brandLogoImg}
+              resizeMode="contain"
+            />
           </View>
           <View style={styles.storeTextBox}>
             <View style={styles.titleRow}>
@@ -157,9 +161,17 @@ const styles = StyleSheet.create({
     width: 34,
     height: 34,
     borderRadius: 8,
-    backgroundColor: '#4f46e5',
+    backgroundColor: '#ffffff',
     justifyContent: 'center',
     alignItems: 'center',
+    overflow: 'hidden',
+    borderWidth: 1,
+    borderColor: '#e2e8f0',
+  },
+  brandLogoImg: {
+    width: 32,
+    height: 32,
+    borderRadius: 7,
   },
   logoText: {
     fontSize: 16,

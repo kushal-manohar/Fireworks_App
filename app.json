@@ -6,12 +6,22 @@
     "orientation": "portrait",
     "icon": "./assets/fireworks-icon.png",
     "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/fireworks-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
     "ios": {
       "supportsTablet": true
     },
     "android": {
       "package": "com.satyamamba.fireworkspos",
       "versionCode": 1,
+      "splash": {
+        "image": "./assets/fireworks-icon.png",
+        "resizeMode": "contain",
+        "backgroundColor": "#ffffff"
+      },
       "adaptiveIcon": {
         "backgroundColor": "#E6F4FE",
         "foregroundImage": "./assets/fireworks-icon.png",
@@ -36,6 +46,15 @@
         "expo-camera",
         {
           "cameraPermission": "Allow Fireworks POS to access camera for scanning barcodes."
+        }
+      ],
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/fireworks-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
         }
       ]
     ],

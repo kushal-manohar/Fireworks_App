@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { StyleSheet, View, ScrollView, Alert, Text, TouchableOpacity } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
+import * as SplashScreen from 'expo-splash-screen';
+
+SplashScreen.preventAutoHideAsync().catch(() => {});
 import { NavbarNative } from './src/components/Navbar.native';
 import { BarcodeScannerNative } from './src/components/BarcodeScanner.native';
 import { CartViewNative, CheckoutDetails } from './src/components/CartView.native';
@@ -84,6 +87,9 @@ export default function App() {
       setSettings(s);
       setTheme(t);
       setSession(sess);
+
+      // Hide native splash screen once initial local state is loaded
+      SplashScreen.hideAsync().catch(() => {});
 
       // 2. Sync with Supabase cloud in background
       try {
